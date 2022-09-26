@@ -38,7 +38,7 @@ const DevicePage = () => {
               className="object-cover w-full h-full"
               data-aos="fade-up"
               data-aos-delay="300"
-              data-aos-offset={`${isMobile ? "-1000" : "-800"}`}
+              data-aos-offset="-800"
             />
             <img
               src={xuongSanXuat2}
@@ -46,7 +46,7 @@ const DevicePage = () => {
               className="object-cover w-full h-full"
               data-aos="fade-up"
               data-aos-delay="600"
-              data-aos-offset={`${isMobile ? "-1000" : "-800"}`}
+              data-aos-offset="-800"
             />
           </div>
           <p className="mt-4 text-lg text-center uppercase">
@@ -74,7 +74,7 @@ const DevicePage = () => {
                 className="object-cover w-full h-full"
                 data-aos="fade-up"
                 data-aos-delay="50"
-                data-aos-offset="400"
+                data-aos-offset="100"
               />
               <span className="block mt-2 leading-normal text-center">
                 Thiết bị máy cắt CNC
@@ -87,7 +87,7 @@ const DevicePage = () => {
                 className="object-cover w-full h-full"
                 data-aos="fade-up"
                 data-aos-delay="50"
-                data-aos-offset="400"
+                data-aos-offset="100"
               />
               <span className="block mt-2 leading-normal text-center">
                 Thiết bị máy cắt dán cạnh
@@ -100,7 +100,7 @@ const DevicePage = () => {
                 className="object-cover w-full h-full"
                 data-aos="fade-up"
                 data-aos-delay="50"
-                data-aos-offset="400"
+                data-aos-offset="100"
               />
               <span className="block mt-2 leading-normal text-center">
                 Thiết bị máy khoan năm mặt
@@ -134,7 +134,7 @@ const DevicePage = () => {
               <div
                 className="w-full"
                 data-aos="fade-right"
-                data-aos-offset="500"
+                data-aos-offset="-500"
               >
                 <img
                   src={vanMFC}

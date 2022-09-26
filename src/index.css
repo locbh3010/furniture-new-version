@@ -23,4 +23,8 @@
   .container {
     @apply max-w-full mx-auto px-5 w-[1240px];
   }
+
+  label {
+    cursor: pointer;
+  }
 }
