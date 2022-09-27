@@ -3,10 +3,9 @@ import React from "react";
 const AboutCard = ({ member, delay }) => {
   const { avatar, name, position, number } = member;
   const cardDelay = delay * 100;
-  const delayNumber = cardDelay + 500 * delay;
   return (
     <div
-      className="flex flex-col items-stretch flex-1 w-full gap-12 group"
+      className="flex flex-col items-stretch flex-1 w-full gap-12 "
       data-aos="fade-up"
       data-aos-delay={`${cardDelay}`}
       data-aos-offset="-100"
@@ -16,16 +15,11 @@ const AboutCard = ({ member, delay }) => {
           <img
             src={avatar}
             alt={avatar}
-            className="object-cover w-full h-full duration-300 group-hover:scale-125 rounded-[10px]"
+            className="object-cover w-full h-full rounded-[10px]"
           />
         </div>
         <div className="absolute bottom-0 -translate-x-1/2 translate-y-1/2 left-1/2">
-          <img
-            src={number}
-            alt=""
-            data-aos="flip-right"
-            data-aos-delay={`${delayNumber}`}
-          />
+          <img src={number} alt="" />
         </div>
       </div>
       <div className="flex flex-col text-center">

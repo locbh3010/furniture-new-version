@@ -9,14 +9,19 @@ const Hero = () => {
       <div className="absolute inset-0 z-30 bg-black bg-opacity-20"></div>
       <div className="container z-40">
         <div className="absolute z-40 w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-          <div className="text-center">
+          <div className="overflow-x-hidden text-center">
             <span
               className="block mb-2 text-lg font-semibold text-white sm:text-xl md:text-2xl"
-              data-aos="zoom-in"
+              data-aos="fade-right"
+              data-aos-delay="150"
+              data-aos-duration="800"
             >
               Kiến tạo ngôi nhà bạn
             </span>
-            <h1 className="text-3xl font-bold text-yellow-300 md:text-4xl lg:text-5xl">
+            <h1
+              className="text-3xl font-bold text-yellow-300 md:text-4xl lg:text-5xl"
+              data-aos="fade-left"
+            >
               Nhà bạn Furniture
             </h1>
 
