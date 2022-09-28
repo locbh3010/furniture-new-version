@@ -19,17 +19,16 @@ const ProjectHome = () => {
 
     axios.get(endpoint).then((response) => {
       const data = response.data.data;
+      if (data?.length > 0) {
+        setNameProject(data[data.length - 1].name);
 
-      if (data.length > 0) {
-        const idProject = data[data.length - 1].id;
-        axios
-          .get(getEndpoint(`/product/list/${+idProject}`))
-          .then((response) => {
-            const products = response.data.data;
+        const endpointProductList = getEndpoint(
+          `/product/list/${+data[data.length - 1].id}`
+        );
 
-            setProductList(products);
-            setNameProject(data[data.length - 1].name);
-          });
+        axios.get(endpointProductList).then((response) => {
+          setProductList(response.data.data);
+        });
       }
     });
   }, []);

@@ -1,6 +1,6 @@
 import React from "react";
 import Banner from "../components/section/Banner";
-import bannerImg from "../images/img.jpg";
+import bannerImg from "../images/living-room-furniture-og.png";
 import xuongSanXuat1 from "../images/xuong-san-xuat-1.jpg";
 import xuongSanXuat2 from "../images/xuong-san-xuat-2.jpg";
 import thietBiCNC from "../images/thiet-bi-cnc.jpg";
@@ -8,7 +8,6 @@ import thietBiCatDanCanh from "../images/thiet-bi-cat-canh.jpg";
 import thietbiMayKhoanNamMat from "../images/thiet-bi-may-khoan-nam-mat.jpg";
 import vanMFC from "../images/van-mfc.jpg";
 import laminate from "../images/laminate.jpg";
-import { isMobile } from "react-device-detect";
 
 const Section = ({ children, title }) => {
   return (

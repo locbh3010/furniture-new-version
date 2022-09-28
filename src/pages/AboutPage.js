@@ -1,6 +1,6 @@
 import React from "react";
 import Banner from "../components/section/Banner";
-import banner from "../images/flower.webp";
+import banner from "../images/living-room-furniture-og.png";
 import CEO from "../images/CEO.jpg";
 import CFO from "../images/CFO.jpg";
 import truongPhongThietKe from "../images/truong-phong-thiet-ke.jpg";
