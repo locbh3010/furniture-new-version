@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { api } from "../../utils/API";
 
 const getEndpoint = (params) => {
-  const endpoint = `http://apionhome.noithatnhabanfurniture.com${params}`;
+  const endpoint = `${api}${params}`;
 
   return endpoint;
 };

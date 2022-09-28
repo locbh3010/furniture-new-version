@@ -10,10 +10,10 @@ import Dropdown from "../components/dropdown/Dropdown";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
+import { api } from "../utils/API";
 
 const ContactPage = () => {
-  const API_ENDPOINT =
-    "http://apionhome.noithatnhabanfurniture.com/mail/contact";
+  const API_ENDPOINT = `${api}/mail/contact`;
   const alert = () => {
     Swal.fire({
       title: "Thành công",

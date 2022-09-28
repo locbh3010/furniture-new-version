@@ -5,9 +5,10 @@ import FeedbackList from "../components/feedback/FeedbackList";
 import Loading from "../components/loading/Loading";
 import Banner from "../components/section/Banner";
 import banner from "../images/living-room-furniture-og.png";
+import { api } from "../utils/API";
 
 const getEndpoint = (params) => {
-  const endpoint = `http://apionhome.noithatnhabanfurniture.com${params}`;
+  const endpoint = `${api}${params}`;
 
   return endpoint;
 };

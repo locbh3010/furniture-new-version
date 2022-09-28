@@ -1,15 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { api } from "../../utils/API";
 import ProductCard from "../product/ProductCard";
 import ProductList from "../product/ProductList";
 
 const getEndpoint = (params) => {
-  const endpoint = `http://apionhome.noithatnhabanfurniture.com${params}`;
+  const endpoint = `${api}${params}`;
 
   return endpoint;
 };
-
 const ProjectHome = () => {
   const [productList, setProductList] = useState([]);
   const [nameProject, setNameProject] = useState();

@@ -5,9 +5,10 @@ import banner from "../images/living-room-furniture-og.png";
 import uuid from "react-uuid";
 import ProductCard from "../components/product/ProductCard";
 import Loading from "../components/loading/Loading";
+import { api } from "../utils/API";
 
 const getEndpoint = (params) => {
-  const endpoint = `http://apionhome.noithatnhabanfurniture.com${params}`;
+  const endpoint = `${api}${params}`;
 
   return endpoint;
 };
@@ -156,6 +157,16 @@ const ProjectPage = () => {
 
         setLoading(false);
       });
+    } else if (filter === 0) {
+      const endpoint = getEndpoint("/project/list");
+      setLoading(true);
+
+      axios.get(endpoint).then(async (response) => {
+        const projects = response.data.data;
+        (await projects?.length) > 0 && setProjectList(projects);
+
+        setLoading(false);
+      });
     }
   }, [filter]);
 
@@ -175,8 +186,8 @@ const ProjectPage = () => {
             })}
         </Dropdown>
         {loading && <LoadingComponent></LoadingComponent>}
-        {filter === 0 &&
-          !loading &&
+        {!loading &&
+          filter === 0 &&
           projectList?.length > 0 &&
           projectList.map((project) => {
             return <ProductList key={project.id} project={project} />;

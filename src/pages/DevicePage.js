@@ -71,7 +71,7 @@ const DevicePage = () => {
                 src={thietBiCNC}
                 alt={thietBiCNC}
                 className="object-cover w-full h-full"
-                data-aos="fade-up"
+                data-aos="fade"
                 data-aos-delay="50"
                 data-aos-offset="100"
               />
@@ -84,7 +84,7 @@ const DevicePage = () => {
                 src={thietBiCatDanCanh}
                 alt={thietBiCatDanCanh}
                 className="object-cover w-full h-full"
-                data-aos="fade-up"
+                data-aos="fade"
                 data-aos-delay="50"
                 data-aos-offset="100"
               />
@@ -97,7 +97,7 @@ const DevicePage = () => {
                 src={thietbiMayKhoanNamMat}
                 alt={thietbiMayKhoanNamMat}
                 className="object-cover w-full h-full"
-                data-aos="fade-up"
+                data-aos="fade"
                 data-aos-delay="50"
                 data-aos-offset="100"
               />

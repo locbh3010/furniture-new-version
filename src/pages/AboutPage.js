@@ -95,12 +95,12 @@ const AboutPage = () => {
             </h2>
             <div className="grid grid-flow-row grid-cols-1 gap-6 mx-auto auto-rows-fr md:grid-cols-3">
               {designers?.length > 0 &&
-                designers.map((leader, index) => {
+                designers.map((leader) => {
                   return (
                     <AboutCard
                       member={leader}
                       key={leader.id}
-                      delay={index}
+                      delay="0"
                     ></AboutCard>
                   );
                 })}
