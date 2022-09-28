@@ -9,7 +9,6 @@ import "sweetalert2/src/sweetalert2";
 import Dropdown from "../components/dropdown/Dropdown";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { ToastContainer, toast } from "react-toastify";
 import { api } from "../utils/API";
 
 const ContactPage = () => {
@@ -43,9 +42,13 @@ const ContactPage = () => {
   });
   const handleSendMail = (value) => {
     if (!isValid) return;
-    axios.post(API_ENDPOINT, value).then((resolve) => {
-      alert();
-    });
+    axios
+      .post(API_ENDPOINT, value)
+      .then((resolve) => {
+        alert();
+        console.log(value);
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
