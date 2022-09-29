@@ -35,17 +35,11 @@ const DevicePage = () => {
               src={xuongSanXuat1}
               alt="xuong san xuat"
               className="object-cover w-full h-full"
-              data-aos="fade-up"
-              data-aos-delay="300"
-              data-aos-offset="-800"
             />
             <img
               src={xuongSanXuat2}
               alt="xuong san xuat"
               className="object-cover w-full h-full"
-              data-aos="fade-up"
-              data-aos-delay="600"
-              data-aos-offset="-800"
             />
           </div>
           <p className="mt-4 text-lg text-center uppercase">
@@ -71,9 +65,6 @@ const DevicePage = () => {
                 src={thietBiCNC}
                 alt={thietBiCNC}
                 className="object-cover w-full h-full"
-                data-aos="fade"
-                data-aos-delay="50"
-                data-aos-offset="100"
               />
               <span className="block mt-2 leading-normal text-center">
                 Thiết bị máy cắt CNC
@@ -84,9 +75,6 @@ const DevicePage = () => {
                 src={thietBiCatDanCanh}
                 alt={thietBiCatDanCanh}
                 className="object-cover w-full h-full"
-                data-aos="fade"
-                data-aos-delay="50"
-                data-aos-offset="100"
               />
               <span className="block mt-2 leading-normal text-center">
                 Thiết bị máy cắt dán cạnh
@@ -97,9 +85,6 @@ const DevicePage = () => {
                 src={thietbiMayKhoanNamMat}
                 alt={thietbiMayKhoanNamMat}
                 className="object-cover w-full h-full"
-                data-aos="fade"
-                data-aos-delay="50"
-                data-aos-offset="100"
               />
               <span className="block mt-2 leading-normal text-center">
                 Thiết bị máy khoan năm mặt
@@ -130,11 +115,7 @@ const DevicePage = () => {
               </p>
             </div>
             <div className="gap-7.5 lg:grid grid-cols-2">
-              <div
-                className="w-full"
-                data-aos="fade-right"
-                data-aos-offset="-500"
-              >
+              <div className="w-full">
                 <img
                   src={vanMFC}
                   alt="Ván MFC"

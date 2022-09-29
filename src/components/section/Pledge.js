@@ -21,26 +21,11 @@ const Pledge = () => {
 
         <div className="grid grid-flow-row grid-cols-1 gap-8 auto-rows-auto lg:grid-cols-2">
           <div className="overflow-hidden aspect-square md:aspect-auto h-[320px] lg:h-auto w-full">
-            {isMobile ? (
-              <img
-                src={banner}
-                alt="Pledge images"
-                className="object-cover w-full h-full"
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-aos-duration="700"
-                data-aos-offset="-200"
-              />
-            ) : (
-              <img
-                src={banner}
-                alt="Pledge images"
-                className="object-cover w-full h-full"
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-aos-duration="700"
-              />
-            )}
+            <img
+              src={banner}
+              alt="Pledge images"
+              className="object-cover w-full h-full"
+            />
           </div>
           <div className="text-sm text-justify md:text-base lg:text-left">
             <p className="mb-6 leading-loose break-words">

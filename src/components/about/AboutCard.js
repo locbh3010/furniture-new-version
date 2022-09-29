@@ -2,13 +2,8 @@ import React from "react";
 
 const AboutCard = ({ member, delay }) => {
   const { avatar, name, position, number } = member;
-  const cardDelay = delay * 50;
   return (
-    <div
-      className="flex flex-col items-stretch flex-1 w-full gap-12 "
-      data-aos="fade"
-      data-aos-delay={`${cardDelay}`}
-    >
+    <div className="flex flex-col items-stretch flex-1 w-full gap-12 ">
       <div className="rounded-[10px] relative flex-1 flex-shrink-0">
         <div className="w-full overflow-hidden rounded-[10px] h-[400px]">
           <img
