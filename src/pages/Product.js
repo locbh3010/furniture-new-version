@@ -140,7 +140,7 @@ const Product = () => {
 
       setLoading(false);
     });
-  }, []);
+  }, [id]);
 
   return (
     <div>

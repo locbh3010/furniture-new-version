@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Banner from "../components/section/Banner";
 import banner from "../images/living-room-furniture-og.png";
-import uuid from "react-uuid";
 import ProductCard from "../components/product/ProductCard";
 import Loading from "../components/loading/Loading";
 import { api } from "../utils/API";

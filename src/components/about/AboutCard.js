@@ -17,7 +17,7 @@ const AboutCard = ({ member, delay }) => {
         </div>
       </div>
       <div className="flex flex-col text-center">
-        <h4 className="text-2xl font-bold text-33 mb-2.5">{name}</h4>
+        <h4 className="text-2xl font-bold text-33 mb-2.5 uppercase">{name}</h4>
         <span className="text-lg font-normal block text-[#666666] uppercase">
           {position}
         </span>

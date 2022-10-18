@@ -3,7 +3,6 @@ import banner from "../../images/what.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { NavLink } from "react-router-dom";
-import { BrowserView, isMobile, MobileView } from "react-device-detect";
 
 AOS.init({
   duration: 500,

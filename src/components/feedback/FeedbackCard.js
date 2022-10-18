@@ -1,6 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useToast } from "react-toastify";
 
 const getEndpoint = (params) => {
   const endpoint = `http://apionhome.noithatnhabanfurniture.com${params}`;
