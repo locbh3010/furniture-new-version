@@ -10,7 +10,7 @@ import AboutCard from "../about/AboutCard";
 const aboutMember = [
   {
     id: 1,
-    name: "ngô thanh lâm",
+    name: "nguyễn thành công",
     position: "trưởng phòng thiết kế",
     avatar: truongPhongThietKe,
     number: number1,
