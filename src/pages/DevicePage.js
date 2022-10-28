@@ -32,18 +32,22 @@ const DevicePage = () => {
             hàng đã tin tưởng và lựa chọn chúng tôi
           </p>
           <div className="grid gap-3 gird-cols-1 md:grid-cols-2">
-            <LazyLoadImage
-              src={xuongSanXuat1}
-              placeholderSrc={xuongSanXuat1}
-              width="100%"
-              height="100%"
-            />
-            <LazyLoadImage
-              src={xuongSanXuat2}
-              placeholderSrc={xuongSanXuat2}
-              width="100%"
-              height="100%"
-            />
+            <div className="w-full h-full">
+              <LazyLoadImage
+                src={xuongSanXuat1}
+                placeholderSrc={xuongSanXuat1}
+                width="100%"
+                height="100%"
+              />
+            </div>
+            <div className="w-full h-full">
+              <LazyLoadImage
+                src={xuongSanXuat2}
+                placeholderSrc={xuongSanXuat2}
+                width="100%"
+                height="100%"
+              />
+            </div>
             {/* <img
               src={xuongSanXuat1}
               alt="xuong san xuat"
@@ -75,6 +79,7 @@ const DevicePage = () => {
           <div className="grid grid-flow-row gird-cols-1 gap-7 md:auto-rows-[576px] auto-rows-[320px]">
             <div className="mb-4">
               <img
+                loading="lazy"
                 src={thietBiCNC}
                 alt={thietBiCNC}
                 className="object-cover w-full h-full"
@@ -86,6 +91,7 @@ const DevicePage = () => {
             </div>
             <div className="mb-4">
               <img
+                loading="lazy"
                 src={thietBiCatDanCanh}
                 alt={thietBiCatDanCanh}
                 className="object-cover w-full h-full"
@@ -97,6 +103,7 @@ const DevicePage = () => {
             </div>
             <div className="mb-4">
               <img
+                loading="lazy"
                 src={thietbiMayKhoanNamMat}
                 alt={thietbiMayKhoanNamMat}
                 className="object-cover w-full h-full"
@@ -133,6 +140,7 @@ const DevicePage = () => {
             <div className="gap-7.5 lg:grid grid-cols-2">
               <div className="w-full">
                 <img
+                  loading="lazy"
                   src={vanMFC}
                   alt="Ván MFC"
                   className="object-cover w-full h-[400px]"
@@ -216,6 +224,7 @@ const DevicePage = () => {
               </div>
               <div className="w-full">
                 <img
+                  loading="lazy"
                   src={laminate}
                   alt="TẤM LAMINATE"
                   className="object-cover w-full h-[400px]"

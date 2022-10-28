@@ -35,8 +35,10 @@ const Header = () => {
     toggleMenu.current.addEventListener("click", handleToggleMenu);
 
     return () => {
-      overlay.current.removeEventListener("click", handleClickOutsideMenu);
-      toggleMenu.current.removeEventListener("click", handleToggleMenu);
+      overlay &&
+        overlay.current.removeEventListener("click", handleClickOutsideMenu);
+      toggleMenu &&
+        toggleMenu.current.removeEventListener("click", handleToggleMenu);
     };
   });
 
@@ -116,15 +118,15 @@ const Header = () => {
                   Về chúng tôi
                 </NavLink>
               </li>
-              {/* <li>
+              <li>
                 <NavLink
-                  to="/feedback"
+                  to="/interior"
                   className="block py-4 pl-3 pr-4 text-sm font-semibold rounded text-33 lg:bg-transparent lg:p-0 "
                   aria-current="page"
                 >
-                  Ý kiến khách hàng
+                  Thi công nội thất
                 </NavLink>
-              </li> */}
+              </li>
               <li>
                 <NavLink
                   to="/contact"

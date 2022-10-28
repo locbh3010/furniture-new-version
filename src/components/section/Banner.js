@@ -7,6 +7,7 @@ const Banner = ({ banner, title, caption = "Nội thât nhà bạn" }) => {
         src={banner}
         alt={banner}
         className="absolute top-0 left-0 object-cover w-full h-full -z-20"
+        loading="lazy"
       />
       <div className="absolute inset-0 z-10 bg-black bg-opacity-25"></div>
       <div className="container relative z-10 text-center text-white">
