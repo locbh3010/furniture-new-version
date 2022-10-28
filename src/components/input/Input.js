@@ -20,4 +20,4 @@ const Input = ({ type = "text", control, name, ...props }) => {
   );
 };
 
-export default Input;
+export default React.memo(Input);

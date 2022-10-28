@@ -46,7 +46,7 @@ const Header = () => {
         className="fixed inset-0 z-40 invisible duration-300 bg-black bg-opacity-40"
         ref={overlay}
       ></div>
-      <nav className="sticky top-0 left-0 z-50 w-full duration-300 bg-white border-gray-300 rounded sm:px-4 bg-opacity-80 backdrop-blur-sm">
+      <nav className="sticky top-0 left-0 z-50 w-full duration-300 bg-white border-gray-300 sm:px-4">
         <div className="container flex flex-wrap items-center justify-between">
           <NavLink to="/" className="flex items-center">
             <img src={logo} alt="logo" className="object-cover h-24" />
@@ -116,7 +116,7 @@ const Header = () => {
                   Về chúng tôi
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/feedback"
                   className="block py-4 pl-3 pr-4 text-sm font-semibold rounded text-33 lg:bg-transparent lg:p-0 "
@@ -124,7 +124,7 @@ const Header = () => {
                 >
                   Ý kiến khách hàng
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/contact"

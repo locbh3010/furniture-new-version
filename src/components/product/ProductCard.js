@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { api } from "../../utils/API";
 
 const getEndpoint = (params) => {
@@ -23,11 +24,13 @@ const ProductCard = ({ project_name, product, index = 1 }) => {
           src={getEndpoint(product?.image_list[0])}
           alt={product?.name}
           className="flex-shrink-0 object-cover h-full duration-300 basis-full group-hover:-translate-x-full"
+          loading="lazy"
         />
         <img
           src={getEndpoint(product?.image_list[1])}
           className="flex-shrink-0 object-cover h-full duration-300 basis-full group-hover:-translate-x-full"
           alt={product?.name}
+          loading="lazy"
         />
       </div>
 
@@ -58,4 +61,4 @@ const ProductCard = ({ project_name, product, index = 1 }) => {
   );
 };
 
-export default ProductCard;
+export default React.memo(ProductCard);

@@ -8,6 +8,7 @@ import thietBiCatDanCanh from "../images/thiet-bi-cat-canh.jpg";
 import thietbiMayKhoanNamMat from "../images/thiet-bi-may-khoan-nam-mat.jpg";
 import vanMFC from "../images/van-mfc.jpg";
 import laminate from "../images/laminate.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Section = ({ children, title }) => {
   return (
@@ -31,7 +32,19 @@ const DevicePage = () => {
             hàng đã tin tưởng và lựa chọn chúng tôi
           </p>
           <div className="grid gap-3 gird-cols-1 md:grid-cols-2">
-            <img
+            <LazyLoadImage
+              src={xuongSanXuat1}
+              placeholderSrc={xuongSanXuat1}
+              width="100%"
+              height="100%"
+            />
+            <LazyLoadImage
+              src={xuongSanXuat2}
+              placeholderSrc={xuongSanXuat2}
+              width="100%"
+              height="100%"
+            />
+            {/* <img
               src={xuongSanXuat1}
               alt="xuong san xuat"
               className="object-cover w-full h-full"
@@ -40,7 +53,7 @@ const DevicePage = () => {
               src={xuongSanXuat2}
               alt="xuong san xuat"
               className="object-cover w-full h-full"
-            />
+            /> */}
           </div>
           <p className="mt-4 text-lg text-center uppercase">
             790, MỸ PHƯỚC TÂN VẠN, PHÚ MỸ, THỦ DẦU MỘT, BÌNH DƯƠNG
@@ -66,6 +79,7 @@ const DevicePage = () => {
                 alt={thietBiCNC}
                 className="object-cover w-full h-full"
               />
+
               <span className="block mt-2 leading-normal text-center">
                 Thiết bị máy cắt CNC
               </span>
@@ -76,6 +90,7 @@ const DevicePage = () => {
                 alt={thietBiCatDanCanh}
                 className="object-cover w-full h-full"
               />
+
               <span className="block mt-2 leading-normal text-center">
                 Thiết bị máy cắt dán cạnh
               </span>
@@ -86,6 +101,7 @@ const DevicePage = () => {
                 alt={thietbiMayKhoanNamMat}
                 className="object-cover w-full h-full"
               />
+
               <span className="block mt-2 leading-normal text-center">
                 Thiết bị máy khoan năm mặt
               </span>

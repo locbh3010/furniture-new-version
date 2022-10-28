@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const AboutCard = ({ member, delay }) => {
   const { avatar, name, position, number } = member;
@@ -6,11 +7,20 @@ const AboutCard = ({ member, delay }) => {
     <div className="flex flex-col items-stretch flex-1 w-full gap-12 ">
       <div className="rounded-[10px] relative flex-1 flex-shrink-0">
         <div className="w-full overflow-hidden rounded-[10px] h-[400px]">
-          <img
+          <LazyLoadImage
+            src={avatar}
+            alt={avatar}
+            placeholderSrc={avatar}
+            width="100%"
+            height="100%"
+            className="object-cover w-full h-full rounded-[10px]"
+          />
+          {/* <img
             src={avatar}
             alt={avatar}
             className="object-cover w-full h-full rounded-[10px]"
-          />
+            loading="lazy"
+          /> */}
         </div>
         <div className="absolute bottom-0 -translate-x-1/2 translate-y-1/2 left-1/2">
           <img src={number} alt="" />
@@ -26,4 +36,4 @@ const AboutCard = ({ member, delay }) => {
   );
 };
 
-export default AboutCard;
+export default React.memo(AboutCard);

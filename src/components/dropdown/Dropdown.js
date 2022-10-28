@@ -41,4 +41,4 @@ const Dropdown = ({ name, control, ...props }) => {
   );
 };
 
-export default Dropdown;
+export default React.memo(Dropdown);

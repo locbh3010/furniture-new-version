@@ -3,6 +3,7 @@ import banner from "../../images/what.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { NavLink } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 AOS.init({
   duration: 500,
@@ -20,8 +21,9 @@ const Pledge = () => {
 
         <div className="grid grid-flow-row grid-cols-1 gap-8 auto-rows-auto lg:grid-cols-2">
           <div className="overflow-hidden aspect-square md:aspect-auto h-[320px] lg:h-auto w-full">
-            <img
+            <LazyLoadImage
               src={banner}
+              placeholderSrc={banner}
               alt="Pledge images"
               className="object-cover w-full h-full"
             />
