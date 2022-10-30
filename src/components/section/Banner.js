@@ -11,8 +11,10 @@ const Banner = ({ banner, title, caption = "Nội thât nhà bạn" }) => {
       />
       <div className="absolute inset-0 z-10 bg-black bg-opacity-25"></div>
       <div className="container relative z-10 text-center text-white">
-        <span className="text-xl opacity-90">{caption}</span>
-        <h1 className="mt-2 text-3xl font-bold uppercase">{title}</h1>
+        <span className="text-base sm:text-xl opacity-90">{caption}</span>
+        <h1 className="mt-2 text-2xl font-bold uppercase sm:text-3xl">
+          {title}
+        </h1>
       </div>
     </header>
   );

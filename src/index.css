@@ -87,6 +87,11 @@
     border-top: 3px solid #efeffa;
   }
 
+  .swiper {
+    align-items: stretch;
+    height: 100%;
+  }
+
   @keyframes rotate-one {
     0% {
       transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
