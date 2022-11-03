@@ -20,7 +20,7 @@ const ProductCard = ({ project_name, product, index = 1 }) => {
       data-aos-delay={`${delay}`}
     >
       <div className="flex aspect-[4/3]">
-        <img
+        {/* <img
           src={getEndpoint(product?.image_list[0])}
           alt={product?.name}
           className="flex-shrink-0 object-cover h-full duration-300 basis-full group-hover:-translate-x-full"
@@ -31,7 +31,25 @@ const ProductCard = ({ project_name, product, index = 1 }) => {
           className="flex-shrink-0 object-cover h-full duration-300 basis-full group-hover:-translate-x-full"
           alt={product?.name}
           loading="lazy"
-        />
+        /> */}
+        <div className="flex-shrink-0 object-cover h-full overflow-hidden duration-300 basis-full group-hover:-translate-x-full">
+          <LazyLoadImage
+            src={getEndpoint(product?.image_list[0])}
+            effect="blur"
+            width={"100%"}
+            height={"100%"}
+            className="object-cover w-full h-full"
+          ></LazyLoadImage>
+        </div>
+        <div className="flex-shrink-0 object-cover h-full overflow-hidden duration-300 basis-full group-hover:-translate-x-full">
+          <LazyLoadImage
+            src={getEndpoint(product?.image_list[1])}
+            effect="blur"
+            width={"100%"}
+            height={"100%"}
+            className="object-cover w-full h-full"
+          ></LazyLoadImage>
+        </div>
       </div>
 
       <div className="mt-6">

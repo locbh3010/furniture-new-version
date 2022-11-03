@@ -24,6 +24,7 @@ const Pledge = () => {
             <LazyLoadImage
               src={banner}
               placeholderSrc={banner}
+              effect="blur"
               alt="Pledge images"
               className="object-cover w-full h-full"
             />

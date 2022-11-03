@@ -36,6 +36,7 @@ const DevicePage = () => {
               <LazyLoadImage
                 src={xuongSanXuat1}
                 placeholderSrc={xuongSanXuat1}
+                effect="blur"
                 width="100%"
                 height="100%"
               />
@@ -44,6 +45,7 @@ const DevicePage = () => {
               <LazyLoadImage
                 src={xuongSanXuat2}
                 placeholderSrc={xuongSanXuat2}
+                effect="blur"
                 width="100%"
                 height="100%"
               />

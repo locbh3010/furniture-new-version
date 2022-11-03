@@ -75,7 +75,6 @@ const LoadingComponent = () => {
         <LoadingCard></LoadingCard>
         <LoadingCard></LoadingCard>
         <LoadingCard></LoadingCard>
-        <LoadingCard></LoadingCard>
       </div>
     </div>
   );
@@ -131,7 +130,7 @@ const ProjectPage = () => {
 
     axios.get(endpoint).then(async (response) => {
       const projects = response.data.data;
-      (await projects?.length) > 0 && setProjectList(projects);
+      projects.length > 0 ? setProjectList(projects) : setProjectList(0);
 
       setLoading(false);
     });
@@ -140,6 +139,7 @@ const ProjectPage = () => {
 
   useEffect(() => {
     setLoading(true);
+
     axios.get(getEndpoint(`/project/list`)).then(async (response) => {
       const data = response.data.data;
       await data.forEach((project) => {
@@ -152,7 +152,7 @@ const ProjectPage = () => {
 
       axios.get(endpoint).then((response) => {
         const data = response.data.data;
-        setProductList(data);
+        data.length > 0 ? setProductList(data) : setProductList(0);
 
         setLoading(false);
       });
@@ -162,7 +162,8 @@ const ProjectPage = () => {
 
       axios.get(endpoint).then(async (response) => {
         const projects = response.data.data;
-        (await projects?.length) > 0 && setProjectList(projects);
+
+        projects.length > 0 && setProjectList(projects);
 
         setLoading(false);
       });

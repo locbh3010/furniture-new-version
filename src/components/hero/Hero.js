@@ -1,16 +1,25 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { NavLink } from "react-router-dom";
 import hero from "../../images/hero.jpg";
 
 const Hero = () => {
   return (
     <div className="h-[80vh] relative">
-      <img
+      {/* <img
         src={hero}
         alt="banner"
         className="object-cover w-full h-full"
         loading="lazy"
-      />
+      /> */}
+      <LazyLoadImage
+        src={hero}
+        alt="banner"
+        className="object-cover w-full h-full"
+        effect="blur"
+        height="100%"
+        width="100%"
+      ></LazyLoadImage>
       <div className="absolute inset-0 z-30 bg-black bg-opacity-20"></div>
       <div className="container z-40">
         <div className="absolute z-40 w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">

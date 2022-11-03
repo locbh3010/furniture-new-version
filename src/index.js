@@ -7,9 +7,11 @@ import { BrowserRouter } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "swiper/css";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 AOS.init({
   duration: 600,
+  once: true,
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
