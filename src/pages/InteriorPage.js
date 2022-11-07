@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 // slider
@@ -57,97 +57,61 @@ const services = [
       "Nhu cầu thiết kế nội thất biệt thực chưa bao giờ là hết nóng với những khách hàng có nhu cầu một tổ ấm sang trọng , tinh tế , thể hiện đẳng cấp của gia chủ.<br/>NỘI THẤT NHÀ BẠN FURNITURE đã thiết kế rất nhiều công trình tại Bình Dương tự tin đem lại cho anh chị những sản phẩm tốt nhất ",
     images: [],
   },
+  {
+    title: "THI CÔNG NỘI THẤT VĂN PHÒNG TRỌN GÓI",
+    description:
+      "Thiết kế nội thất văn phòng với những mẫu thiết kế đẹp rộng rãi toát lên sự chuyên nghiệp cho công ty , kiến trúc sư giàu kinh nghiệm.<br/> Bố trí những sản phẩm nội thất theo phong thuỷ cũng là một thế mạnh của chúng tôi",
+    images: [],
+  },
+  {
+    title: "NỘI THẤT NHÀ BẠN FURNITURE",
+    description:
+      "Đối với việc thi công nội thất phòng giám đốc, phòng các trưởng bộ phận, các phòng ban,… hợp phong thủy, phù hợp với nhân sự cũng là điều mà NỘI THẤT NHÀ BẠN quan tâm khi thi công nội thất văn phòng trọn gói Bình Dương.",
+    images: [],
+  },
+  {
+    title: "THI CÔNG CÁC DỊCH VỤ KHÁC",
+    description:
+      "NỘI THẤT NHÀ BẠN FURNITURE cũng đem đến cho khách hàng những dịch vụ theo nhu cầu như : thi công nội thất Showroom, thi công nội Karaoke, thi công nội thất Spa,thi công nội thất nhà hàng, thi công nội thất cafe, thi công nội thất khách sạn, thi công nội thất cửa hàng, thi công nội thất shop thời trang,… <br/>Đem đến cho khách hàng sự thoải mái trong thi công là sự vinh hạnh của chúng tôi",
+  },
 ];
 
-const Title = (props) => {
+const ranks = [
+  {
+    title: "THI CÔNG NỘI THẤT PHÒNG KHÁCH",
+    description:
+      "Nơi tiếp đón những khách đến thăm căn nhà của anh chị nên cần được thiết kế đẹp thoáng toát lên sự sang trọng của gia chủ cũng là nơi để các thành viên quây quần sau ngày làm việc mệt mỏi . Chính vì vậy việc thi công phòng khách là việc tối quan trọng",
+    images: [],
+  },
+  {
+    title: "THI CÔNG NỘI THẤT NHÀ BẾP",
+    description:
+      "Nhà bếp là nơi nấu nướng nên thường xuyên tiếp xúc với lửa và nước. Vì vậy, cần lựa chọn vật liệu thi công nội thất nhà bếp làm sao để đảm bảo được tính an toàn và đảm bảo chất lượng để tạo nên không gian bếp hoàn hảo.",
+    images: "",
+  },
+  {
+    title: "THI CÔNG NỘI THẤT PHÒNG NGỦ TRỌN GÓI",
+    description:
+      "Phòng ngủ là không gian sinh hoạt riêng tư không thể thiếu dành cho mỗi thành viên trong gia đình. Một phòng ngủ tiện nghi sẽ đảm bảo được chất lượng giấc ngủ, giúp tái tạo năng lượng sau một ngày làm việc mệt mỏi. <br/> Một số phòng ngủ được xây dựng sẽ có phòng tắm riêng cho căn phòng đó, vì vậy anh chị có thể chọn dịch vụ thi công nội thất phòng ngủ trọn gói sẽ giúp anh chị tiết kiệm được khoảng chi phí trong việc thi công nội thất phòng tắm.",
+    images: [],
+  },
+  {
+    title: "THI CÔNG NỘI THẤT PHÒNG THỜ.",
+    description:
+      "Với đất nước quan trọng việc thờ cúng tổ tiên phòng thờ là một phong không thể thiếu. Chính vì vậy việc thi công nội thất phòng thờ theo phong thuỷ là điều quan trọng",
+    images: [],
+  },
+];
+
+const Title = ({ title, color }) => {
   return (
     <h2
       className="py-4 text-xl font-semibold uppercase sm:text-2xl md:text-4xl text-dark"
       data-aos="fade"
       data-aos-duration="700"
     >
-      {props.title}{" "}
-      <span className="font-bold text-primary">{props.color}</span>
+      {title} <span className="font-bold text-primary">{color}</span>
     </h2>
-  );
-};
-
-const InteriorHeader = () => {
-  return (
-    <header className="py-10 select-none h-auto lg:h-[640px]">
-      <div className="container h-full">
-        <div className="relative grid items-center h-full grid-flow-row grid-cols-1 gap-8 auto-rows-auto lg:grid-cols-2">
-          <div className="bg-[#F8F8F8] backdrop-blur-[4.5px] bg-opacity-0 sm:bg-opacity-70 rounded-2xl py-0 sm:py-8 px-0 sm:px-12 relative z-20">
-            <h1
-              className="mb-6 text-3xl font-bold capitalize lg:text-6xl text-primary"
-              data-aos="fade-right"
-              data-aos-duration="800"
-            >
-              Thi công nội thất
-            </h1>
-            <p
-              className="mb-8 text-sm lg:text-2xl font-normal text-[##4B4B4B]"
-              data-aos="fade-right"
-              data-aos-duration="1000"
-            >
-              We help you to create organize your room to be more cozy, design
-              by professional interior designer
-            </p>
-            <NavLink
-              to="/contact"
-              className="px-6 py-3 text-sm font-semibold text-white lg:text-lg bg-primary"
-            >
-              Liên hệ ngay
-            </NavLink>
-          </div>
-          <div className="relative top-0 right-0 z-10 select-none lg:w-2/3 lg:absolute h-[320px] lg:h-full">
-            <div className="w-full h-full overflow-hidden rounded-lg">
-              <Swiper
-                navigation={{
-                  prevEl: ".prevBanner",
-                  nextEl: ".nextBanner",
-                }}
-                pagination={{
-                  type: "progressbar",
-                }}
-                modules={[Navigation, Autoplay, Parallax, Pagination]}
-                autoplay={{
-                  delay: 3000,
-                }}
-                parallax={true}
-                loop={true}
-                className="z-10"
-              >
-                {banner.map((imgSrc) => (
-                  <SwiperSlide className="self-stretch h-auto" key={imgSrc}>
-                    <LazyLoadImage
-                      height="100%"
-                      width="100%"
-                      effect="blur"
-                      src={imgSrc}
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-            <div className="absolute z-20 flex items-center justify-between w-full grid-cols-1 gap-4 px-2 text-orange-500 -translate-y-1/2 top-1/2 lg:justify-center lg:top-full lg:-translate-y-[150%]">
-              <button
-                className="rounded-lg bg-white bg-opacity-80 backdrop-blur-[2px] h-15 w-15 flex items-center justify-center prevBanner"
-                id="prevBanner"
-              >
-                <ChevronLeft />
-              </button>
-              <button
-                className="rounded-lg bg-white bg-opacity-80 backdrop-blur-[2px] w-15 h-15 flex items-center justify-center nextBanner"
-                id="nextBanner"
-              >
-                <ChevronRight />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
   );
 };
 
@@ -250,6 +214,115 @@ const MauThietKeDep = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const BlockItem = ({ title, description, images }) => {
+  const descEle = useRef(null);
+
+  useEffect(() => {
+    descEle.current.textContent = "";
+    descEle.current.insertAdjacentHTML("beforeend", description);
+  }, [description]);
+
+  console.log(title);
+
+  return (
+    <div className="py-6">
+      <h3
+        className="py-4 text-xl font-semibold uppercase sm:text-2xl text-dark"
+        data-aos="fade-right"
+        data-aos-duration="700"
+      >
+        {title}
+      </h3>
+      <p
+        ref={descEle}
+        data-aos="fade"
+        data-aos-duration="800"
+        className="text-sm text-justify sm:text-left sm:text-base"
+      ></p>
+    </div>
+  );
+};
+
+const InteriorHeader = () => {
+  return (
+    <header className="py-10 select-none h-auto lg:h-[640px]">
+      <div className="container h-full">
+        <div className="relative grid items-center h-full grid-flow-row grid-cols-1 gap-8 auto-rows-auto lg:grid-cols-2">
+          <div className="bg-[#F8F8F8] backdrop-blur-[4.5px] bg-opacity-0 sm:bg-opacity-70 rounded-2xl py-0 sm:py-8 px-0 sm:px-12 relative z-20">
+            <h1
+              className="mb-6 text-3xl font-bold capitalize lg:text-6xl text-primary"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            >
+              Thi công nội thất
+            </h1>
+            <p
+              className="mb-8 text-sm lg:text-2xl font-normal text-[##4B4B4B]"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              chúng tôi giúp căn phòng của bạn trở nên ấm cúng hơn, thiết kế bởi
+              nhà thiết kế nội thất chuyên nghiệp
+            </p>
+            <NavLink
+              to="/contact"
+              className="px-6 py-3 text-sm font-semibold text-white lg:text-lg bg-primary"
+            >
+              Liên hệ ngay
+            </NavLink>
+          </div>
+          <div className="relative top-0 right-0 z-10 select-none lg:w-2/3 lg:absolute h-[320px] lg:h-full">
+            <div className="w-full h-full overflow-hidden rounded-lg">
+              <Swiper
+                navigation={{
+                  prevEl: ".prevBanner",
+                  nextEl: ".nextBanner",
+                }}
+                pagination={{
+                  type: "progressbar",
+                }}
+                modules={[Navigation, Autoplay, Parallax, Pagination]}
+                autoplay={{
+                  delay: 3000,
+                }}
+                parallax={true}
+                loop={true}
+                className="z-10 overflow-hidden"
+              >
+                {banner.map((imgSrc) => (
+                  <SwiperSlide className="self-stretch h-auto" key={imgSrc}>
+                    <LazyLoadImage
+                      height="100%"
+                      width="100%"
+                      effect="blur"
+                      src={imgSrc}
+                      className="object-cover w-full h-full"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <div className="absolute z-20 flex items-center justify-between w-full grid-cols-1 gap-4 px-2 text-orange-500 -translate-y-1/2 top-1/2 lg:justify-center lg:top-full lg:-translate-y-[150%]">
+              <button
+                className="rounded-lg bg-white bg-opacity-80 backdrop-blur-[2px] h-15 w-15 flex items-center justify-center prevBanner"
+                id="prevBanner"
+              >
+                <ChevronLeft />
+              </button>
+              <button
+                className="rounded-lg bg-white bg-opacity-80 backdrop-blur-[2px] w-15 h-15 flex items-center justify-center nextBanner"
+                id="nextBanner"
+              >
+                <ChevronRight />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
   );
 };
 
@@ -358,11 +431,147 @@ const Section4 = () => {
   return (
     <section className="py-20 bg-[#F2F5FF]">
       <div className="container">
-        <div className="text-center">
+        <div className="-my-3 text-center -mb-7">
           <Title
             title="dịch vụ của công ty"
             color="nội thất nhà bạn furniture"
           />
+        </div>
+
+        <div className="py-10">
+          {services?.length > 0 &&
+            services.map((serivce) => (
+              <BlockItem
+                key={serivce.title}
+                title={serivce.title}
+                description={serivce.description}
+                images={serivce.images}
+              />
+            ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Section5 = () => {
+  return (
+    <section className="py-20">
+      <div className="container">
+        <div className="text-center">
+          <Title title="Hạnh mục trong" color="thi công nội thất" />
+        </div>
+
+        {ranks?.length > 0 &&
+          ranks.map((rank) => (
+            <BlockItem
+              key={rank.title}
+              title={rank.title}
+              description={rank.description}
+              images={rank.images}
+            />
+          ))}
+      </div>
+    </section>
+  );
+};
+
+const Section6 = () => {
+  return (
+    <section className="py-20 bg-[#F2F5FF]">
+      <div className="container">
+        <div className="text-center">
+          <Title title="quy trình" color="thi công nội thất" />
+        </div>
+
+        <div className="py-6">
+          <ul className="text-sm text-justify list-disc sm:text-base sm:text-left">
+            <li
+              className="py-2"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-delay="50"
+            >
+              Bước 1: Sau khi có bản vẽ 3D, 2 bên thống nhất thiết kế, NỘI THẤT
+              NHÀ BẠNsẽ báo giá chính xác chi tiết hạng mục sẽ thi công
+            </li>
+            <li
+              className="py-2"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-delay="70"
+            >
+              Bước 2: Quý khách ký hợp đồng thi công, ứng 50% tổng hợp đồng cho
+              bên Ô Vuông để đặt đóng đồ nội thất.
+            </li>
+            <li
+              className="py-2"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-delay="100"
+            >
+              Bước 3: Sau đó, các KTS và kĩ thuật sẽ tiến hành ra bản vẽ thi
+              công chi tiết nhất và tiến hành đo đạc lại hiện trạng, nhằm tránh
+              sai sót trong quá trình thi công
+            </li>
+            <li
+              className="py-2"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-delay="120"
+            >
+              Bước 4: Nội thất sẽ được đóng tại xưởng, song song các hạng mục
+              như điện, sơn nước, thô sẽ làm trực tiếp tại công trình
+            </li>
+            <li
+              className="py-2"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-delay="150"
+            >
+              Bước 5: Sau khi 2 bên thống nhất thời gian bàn giao, Khách hàng
+              nghiệm thu khối lượng thực tế và tiến hành thanh toán cuối cùng
+            </li>
+          </ul>
+          <p
+            className="py-5 text-sm leading-relaxed text-justify sm:text-base sm:text-left"
+            data-aos="fade-right"
+            data-aos-duration="600"
+          >
+            Với đội ngũ có kinh nghiệm trong thiết kế thi công nội thất Bình
+            Dương, NỘI THẤT NHÀ BẠN FURNITURE tin chắc sẽ mang đến sự hoàn hảo
+            cho ngôi nhà của khách hàng từ việc lên bản vẽ cho đến thi công nội
+            thất.
+          </p>
+          <p
+            className="text-sm not-italic leading-relaxed sm:text-base"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <span className="font-bold">
+              NỘI THẤT NHÀ BẠN FURNITURE{" "}
+              <address className="not-italic font-normal">
+                Địa chỉ: 790, MỸ PHƯỚC TÂN VẠN, PHÚ MỸ, THỦ DẦU MỘT, BÌNH DƯƠNG
+              </address>
+            </span>
+            Mọi chi tiết xin liên hệ:
+            <span className="block">
+              Hotline:{" "}
+              <a href="tel:+0933355538" className="underline">
+                09 333 555 48
+              </a>
+            </span>
+            <span>Mail: congtynoithatnhaban@gmail.com</span>
+            <span className="block">
+              Website:{" "}
+              <a
+                href="https://noithatnhabanfurniture.com"
+                className="underline"
+              >
+                https://noithatnhabanfurniture.com
+              </a>
+            </span>
+          </p>
         </div>
       </div>
     </section>
@@ -377,6 +586,8 @@ const InteriorPage = () => {
       <Section2 />
       <Section3 />
       <Section4 />
+      <Section5 />
+      <Section6 />
     </div>
   );
 };
