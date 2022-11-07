@@ -92,6 +92,10 @@
     height: 100%;
   }
 
+  bold {
+    @apply font-semibold;
+  }
+
   @keyframes rotate-one {
     0% {
       transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);

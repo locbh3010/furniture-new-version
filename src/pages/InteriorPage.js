@@ -42,37 +42,37 @@ const services = [
   {
     title: "THI CÔNG NỘI THẤT CĂN HỘ CHUNG CƯ",
     description:
-      "Với một căn hộ với diện tích vừa và nhỏ cho một gia đình trẻ, thì thi công nội thất chung cư là một nhu cầu rất lớn của nhiều gia đình.Việc lựa chọn một đơn vị thi công cho căn nhà yêu quý của gia đình là một điều nan giải .Chính vì vậy chúng tôi ở đây để giải quyết vấn đề này.Thi công nội thất theo phong cách hiện đại, Luxury, tân cổ điển,… là những mẫu thiết kế được nhiều khách hàng lựa chọn để thiết kế và thi công nội thất.<br/>Với phương châm tiết kiệm chi phí của khách hàng đem đến sự hài lòng cho anh chị..",
+      "Với một căn hộ với diện tích vừa và nhỏ cho một gia đình trẻ, thì <bold>thi công nội thất chung cư</bold> là một nhu cầu rất lớn của nhiều gia đình.Việc lựa chọn một đơn vị thi công cho căn nhà yêu quý của gia đình là một điều nan giải .Chính vì vậy chúng tôi ở đây để giải quyết vấn đề này.<bold>Thi công nội thất</bold> theo phong cách hiện đại, Luxury, tân cổ điển,… là những mẫu thiết kế được nhiều khách hàng lựa chọn để thiết kế và thi công nội thất.<br/>Với phương châm tiết kiệm chi phí của khách hàng đem đến sự hài lòng cho anh chị..",
     images: [],
   },
   {
     title: "THI CÔNG NỘI THẤT NHÀ PHỐ HIỆN ĐẠI",
     description:
-      "Với kinh nghiệm nhiều năm trong lĩnh vực thiết kế nhà phố cùng với đó là thấu hiểu được tâm lý khách hàng qua những năm hoạt động.Thi công nội thất nhà ở đem đến sự thoáng đãng , không gian tiện nghi , tiết kiệm diện tích nhưng vẫn đem lại những yếu tố tốt nhất của căn nhà anh chị",
+      "Với </bold>kinh nghiệm nhiều năm trong lĩnh vực thiết kế</bold> nhà phố cùng với đó là thấu hiểu được tâm lý khách hàng qua những năm hoạt động.Thi công nội thất nhà ở đem đến sự thoáng đãng , không gian tiện nghi , tiết kiệm diện tích nhưng vẫn đem lại những yếu tố tốt nhất của căn nhà anh chị",
     images: [],
   },
   {
     title: "THI CÔNG NỘI THẤT BIỆT THỰ CAO CẤP",
     description:
-      "Nhu cầu thiết kế nội thất biệt thực chưa bao giờ là hết nóng với những khách hàng có nhu cầu một tổ ấm sang trọng , tinh tế , thể hiện đẳng cấp của gia chủ.<br/>NỘI THẤT NHÀ BẠN FURNITURE đã thiết kế rất nhiều công trình tại Bình Dương tự tin đem lại cho anh chị những sản phẩm tốt nhất ",
+      "Nhu cầu <bold>thiết kế nội thất</bold> biệt thự chưa bao giờ là hết nóng với những khách hàng có nhu cầu một tổ ấm sang trọng , tinh tế , thể hiện đẳng cấp của gia chủ.<br/><bold>NỘI THẤT NHÀ BẠN FURNITURE</bold> đã thiết kế rất nhiều công trình tại Bình Dương tự tin đem lại cho anh chị những sản phẩm tốt nhất ",
     images: [],
   },
   {
     title: "THI CÔNG NỘI THẤT VĂN PHÒNG TRỌN GÓI",
     description:
-      "Thiết kế nội thất văn phòng với những mẫu thiết kế đẹp rộng rãi toát lên sự chuyên nghiệp cho công ty , kiến trúc sư giàu kinh nghiệm.<br/> Bố trí những sản phẩm nội thất theo phong thuỷ cũng là một thế mạnh của chúng tôi",
+      "<bold>Thiết kế nội thất</bold> văn phòng với những mẫu thiết kế đẹp rộng rãi toát lên sự chuyên nghiệp cho công ty , kiến trúc sư giàu kinh nghiệm.<br/> Bố trí những sản phẩm nội thất theo phong thuỷ cũng là một thế mạnh của chúng tôi",
     images: [],
   },
   {
     title: "NỘI THẤT NHÀ BẠN FURNITURE",
     description:
-      "Đối với việc thi công nội thất phòng giám đốc, phòng các trưởng bộ phận, các phòng ban,… hợp phong thủy, phù hợp với nhân sự cũng là điều mà NỘI THẤT NHÀ BẠN quan tâm khi thi công nội thất văn phòng trọn gói Bình Dương.",
+      "Đối với việc <bold>thi công nội thất phòng giám đốc</bold>, phòng các trưởng bộ phận, các phòng ban,… hợp phong thủy, phù hợp với nhân sự cũng là điều mà <bold>NỘI THẤT NHÀ BẠN</bold> quan tâm khi thi công nội thất văn phòng trọn gói Bình Dương.",
     images: [],
   },
   {
     title: "THI CÔNG CÁC DỊCH VỤ KHÁC",
     description:
-      "NỘI THẤT NHÀ BẠN FURNITURE cũng đem đến cho khách hàng những dịch vụ theo nhu cầu như : thi công nội thất Showroom, thi công nội Karaoke, thi công nội thất Spa,thi công nội thất nhà hàng, thi công nội thất cafe, thi công nội thất khách sạn, thi công nội thất cửa hàng, thi công nội thất shop thời trang,… <br/>Đem đến cho khách hàng sự thoải mái trong thi công là sự vinh hạnh của chúng tôi",
+      "<bold>NỘI THẤT NHÀ BẠN FURNITURE</bold> cũng đem đến cho khách hàng những dịch vụ theo nhu cầu như : thi công nội thất <bold>Showroom</bold>, thi công nội <bold>Karaoke</bold>, thi công nội thất <bold>Spa</bold>,thi công nội thất <bold>nhà hàng</bold>, thi công nội thất <bold>cafe</bold>, thi công nội thất <bold>khách sạn</bold>, thi công nội thất <bold>cửa hàng</bold>, thi công nội thất <bold>shop thời trang</bold>,… <br/>Đem đến cho khách hàng sự thoải mái trong thi công là sự vinh hạnh của chúng tôi",
   },
 ];
 
@@ -86,19 +86,19 @@ const ranks = [
   {
     title: "THI CÔNG NỘI THẤT NHÀ BẾP",
     description:
-      "Nhà bếp là nơi nấu nướng nên thường xuyên tiếp xúc với lửa và nước. Vì vậy, cần lựa chọn vật liệu thi công nội thất nhà bếp làm sao để đảm bảo được tính an toàn và đảm bảo chất lượng để tạo nên không gian bếp hoàn hảo.",
+      "Nhà bếp là nơi nấu nướng nên thường xuyên tiếp xúc với lửa và nước. Vì vậy, cần lựa chọn <bold>vật liệu thi công nội thất</bold> nhà bếp làm sao để đảm bảo được tính an toàn và đảm bảo chất lượng để tạo nên không gian bếp hoàn hảo.",
     images: "",
   },
   {
     title: "THI CÔNG NỘI THẤT PHÒNG NGỦ TRỌN GÓI",
     description:
-      "Phòng ngủ là không gian sinh hoạt riêng tư không thể thiếu dành cho mỗi thành viên trong gia đình. Một phòng ngủ tiện nghi sẽ đảm bảo được chất lượng giấc ngủ, giúp tái tạo năng lượng sau một ngày làm việc mệt mỏi. <br/> Một số phòng ngủ được xây dựng sẽ có phòng tắm riêng cho căn phòng đó, vì vậy anh chị có thể chọn dịch vụ thi công nội thất phòng ngủ trọn gói sẽ giúp anh chị tiết kiệm được khoảng chi phí trong việc thi công nội thất phòng tắm.",
+      "Phòng ngủ là không gian sinh hoạt riêng tư không thể thiếu dành cho mỗi thành viên trong gia đình. Một phòng ngủ tiện nghi sẽ đảm bảo được chất lượng giấc ngủ, giúp tái tạo năng lượng sau một ngày làm việc mệt mỏi. <br/> Một số phòng ngủ được xây dựng sẽ có phòng tắm riêng cho căn phòng đó, vì vậy anh chị có thể chọn dịch vụ thi công nội thất phòng ngủ trọn gói sẽ giúp anh chị tiết kiệm được khoảng chi phí trong việc <bold>thi công nội thất phòng tắm</bold>.",
     images: [],
   },
   {
     title: "THI CÔNG NỘI THẤT PHÒNG THỜ.",
     description:
-      "Với đất nước quan trọng việc thờ cúng tổ tiên phòng thờ là một phong không thể thiếu. Chính vì vậy việc thi công nội thất phòng thờ theo phong thuỷ là điều quan trọng",
+      "Với đất nước quan trọng việc thờ cúng tổ tiên phòng thờ là một phong không thể thiếu. Chính vì vậy việc <bold>thi công nội thất phòng thờ</bold> theo phong thuỷ là điều quan trọng",
     images: [],
   },
 ];
@@ -236,8 +236,6 @@ const BlockItem = ({ title, description, images }) => {
     descEle.current.textContent = "";
     descEle.current.insertAdjacentHTML("beforeend", description);
   }, [description]);
-
-  console.log(title);
 
   return (
     <div className="py-6">
@@ -377,6 +375,7 @@ const Section1 = () => {
               alt="thi cong noi that tron goi"
               height="100%"
               width="100%"
+              className="object-cover w-full h-full"
             ></LazyLoadImage>
           </div>
         </div>
@@ -390,10 +389,7 @@ const Section2 = () => {
     <section className="py-20 pt-16 bg-[#F2F5FF]">
       <div className="container">
         <div className="text-center">
-          <Title
-            title="LÍ DO VÌ SAO CHỌN Ô VUÔNG"
-            color="nội thất nhà bạn furniture"
-          />
+          <Title title="LÍ DO VÌ SAO CHỌN" color="nội thất nhà bạn furniture" />
         </div>
         <div className="grid grid-flow-row grid-cols-1 gap-4 mt-20 text-left auto-rows-fr sm:grid-cols-2 lg:grid-cols-3">
           <AboutItem
@@ -510,8 +506,9 @@ const Section6 = () => {
               data-aos-duration="800"
               data-aos-delay="50"
             >
-              Bước 1: Sau khi có bản vẽ 3D, 2 bên thống nhất thiết kế, NỘI THẤT
-              NHÀ BẠNsẽ báo giá chính xác chi tiết hạng mục sẽ thi công
+              <bold>Bước 1:</bold> Sau khi có bản vẽ 3D, 2 bên thống nhất thiết
+              kế, NỘI THẤT NHÀ BẠNsẽ báo giá chính xác chi tiết hạng mục sẽ thi
+              công
             </li>
             <li
               className="py-2"
@@ -519,8 +516,9 @@ const Section6 = () => {
               data-aos-duration="800"
               data-aos-delay="70"
             >
-              Bước 2: Quý khách ký hợp đồng thi công, ứng 50% tổng hợp đồng cho
-              bên Ô Vuông để đặt đóng đồ nội thất.
+              <bold>Bước 2:</bold> Quý khách ký hợp đồng thi công, ứng 50% tổng
+              hợp đồng cho bên <bold>nội thất nhà bạn furniture</bold> để đặt
+              đóng đồ nội thất.
             </li>
             <li
               className="py-2"
@@ -528,9 +526,9 @@ const Section6 = () => {
               data-aos-duration="800"
               data-aos-delay="100"
             >
-              Bước 3: Sau đó, các KTS và kĩ thuật sẽ tiến hành ra bản vẽ thi
-              công chi tiết nhất và tiến hành đo đạc lại hiện trạng, nhằm tránh
-              sai sót trong quá trình thi công
+              <bold>Bước 3:</bold> Sau đó, các KTS và kĩ thuật sẽ tiến hành ra
+              bản vẽ thi công chi tiết nhất và tiến hành đo đạc lại hiện trạng,
+              nhằm tránh sai sót trong quá trình thi công
             </li>
             <li
               className="py-2"
@@ -538,8 +536,9 @@ const Section6 = () => {
               data-aos-duration="800"
               data-aos-delay="120"
             >
-              Bước 4: Nội thất sẽ được đóng tại xưởng, song song các hạng mục
-              như điện, sơn nước, thô sẽ làm trực tiếp tại công trình
+              <bold>Bước 4:</bold> Nội thất sẽ được đóng tại xưởng, song song
+              các hạng mục như điện, sơn nước, thô sẽ làm trực tiếp tại công
+              trình
             </li>
             <li
               className="py-2"
@@ -547,8 +546,9 @@ const Section6 = () => {
               data-aos-duration="800"
               data-aos-delay="150"
             >
-              Bước 5: Sau khi 2 bên thống nhất thời gian bàn giao, Khách hàng
-              nghiệm thu khối lượng thực tế và tiến hành thanh toán cuối cùng
+              <bold>Bước 5:</bold> Sau khi 2 bên thống nhất thời gian bàn giao,
+              Khách hàng nghiệm thu khối lượng thực tế và tiến hành thanh toán
+              cuối cùng
             </li>
           </ul>
           <p
@@ -561,7 +561,7 @@ const Section6 = () => {
             cho ngôi nhà của khách hàng từ việc lên bản vẽ cho đến thi công nội
             thất.
           </p>
-          <p
+          <div
             className="text-sm not-italic leading-relaxed sm:text-base"
             data-aos="fade-right"
             data-aos-duration="1000"
@@ -589,7 +589,7 @@ const Section6 = () => {
                 https://noithatnhabanfurniture.com
               </a>
             </span>
-          </p>
+          </div>
         </div>
       </div>
     </section>
