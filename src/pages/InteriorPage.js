@@ -115,6 +115,18 @@ const Title = ({ title, color }) => {
   );
 };
 
+const ImageItem = ({ src, alt }) => {
+  return (
+    <LazyLoadImage
+      src={src}
+      height="100%"
+      width="100%"
+      effect={"blur"}
+      alt={alt}
+    />
+  );
+};
+
 const AboutItem = ({ icon, title, description }) => {
   return (
     <div className="py-6 xl:py-10 px-4 flex flex-col gap-2.5 rounded group bg-white">
@@ -242,6 +254,12 @@ const BlockItem = ({ title, description, images }) => {
         data-aos-duration="800"
         className="text-sm text-justify sm:text-left sm:text-base"
       ></p>
+      <div className="py-4">
+        <div className="grid grid-flow-row grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-3 auto-rows-auto">
+          {images?.length > 0 &&
+            images.map((img) => <ImageItem src={img} alt={img} />)}
+        </div>
+      </div>
     </div>
   );
 };
