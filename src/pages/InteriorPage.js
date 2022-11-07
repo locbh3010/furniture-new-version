@@ -29,6 +29,7 @@ import slide1 from "../images/interior/slide-1.jpg";
 import slide2 from "../images/interior/slide-2.jpg";
 import slide4 from "../images/interior/slide-4.jpg";
 import section1Image from "../images/interior/section1.jpg";
+import { fullBrowserVersion } from "react-device-detect";
 
 const getEndpoint = (params) => {
   const endpoint = `${api}${params}`;
@@ -81,7 +82,19 @@ const ranks = [
     title: "THI CÔNG NỘI THẤT PHÒNG KHÁCH",
     description:
       "Nơi tiếp đón những khách đến thăm căn nhà của anh chị nên cần được thiết kế đẹp thoáng toát lên sự sang trọng của gia chủ cũng là nơi để các thành viên quây quần sau ngày làm việc mệt mỏi . Chính vì vậy việc thi công phòng khách là việc tối quan trọng",
-    images: [],
+    images: [
+      "https://i.ibb.co/c1ZBzqp/phong-khach-1.jpg",
+      "https://i.ibb.co/bF2vTd8/phong-khach-3.jpg",
+      "https://i.ibb.co/NnHrprx/phong-khach-2.jpg",
+      "https://i.ibb.co/s2VYbNY/phong-khach-4.jpg",
+      "https://i.ibb.co/sqmsXk3/phong-khach-5.jpg",
+      "https://i.ibb.co/YT955mb/phong-khach-6.jpg",
+      "https://i.ibb.co/WDSF06K/phong-khach-7.jpg",
+      "https://i.ibb.co/KjNMT6t/phong-khach-8.jpg",
+      "https://i.ibb.co/j6SQf1c/phong-khach-9.jpg",
+      "https://i.ibb.co/wL9Tr27/phong-khach-10.jpg",
+      "https://i.ibb.co/5BHKR6b/phong-khach-11.jpg",
+    ],
   },
   {
     title: "THI CÔNG NỘI THẤT NHÀ BẾP",
@@ -93,13 +106,25 @@ const ranks = [
     title: "THI CÔNG NỘI THẤT PHÒNG NGỦ TRỌN GÓI",
     description:
       "Phòng ngủ là không gian sinh hoạt riêng tư không thể thiếu dành cho mỗi thành viên trong gia đình. Một phòng ngủ tiện nghi sẽ đảm bảo được chất lượng giấc ngủ, giúp tái tạo năng lượng sau một ngày làm việc mệt mỏi. <br/> Một số phòng ngủ được xây dựng sẽ có phòng tắm riêng cho căn phòng đó, vì vậy anh chị có thể chọn dịch vụ thi công nội thất phòng ngủ trọn gói sẽ giúp anh chị tiết kiệm được khoảng chi phí trong việc <bold>thi công nội thất phòng tắm</bold>.",
-    images: [],
+    images: [
+      "https://i.ibb.co/z4vgmSc/phong-ngu-1.jpg",
+      "https://i.ibb.co/qNtv2DJ/phong-ngu-2.jpg",
+      "https://i.ibb.co/LCThDRG/phong-ngu-3.jpg",
+
+      "https://i.ibb.co/JRZ0BpM/phong-ngu-4.jpg",
+      "https://i.ibb.co/Lzm1MYm/phong-ngu-5.jpg",
+    ],
   },
   {
     title: "THI CÔNG NỘI THẤT PHÒNG THỜ.",
     description:
       "Với đất nước quan trọng việc thờ cúng tổ tiên phòng thờ là một phong không thể thiếu. Chính vì vậy việc <bold>thi công nội thất phòng thờ</bold> theo phong thuỷ là điều quan trọng",
-    images: [],
+    images: [
+      "https://i.ibb.co/c1ZBzqp/phong-khach-1.jpg",
+      "https://i.ibb.co/GtCbqbw/phong-tho-3.jpg",
+      "https://i.ibb.co/kGDj8QZ/phong-tho-2.jpg",
+      "https://i.ibb.co/CwyNJ8H/phong-tho-1.jpg",
+    ],
   },
 ];
 
@@ -121,8 +146,9 @@ const ImageItem = ({ src, alt }) => {
       src={src}
       height="100%"
       width="100%"
-      effect={"blur"}
+      effect="blur"
       alt={alt}
+      className="object-cover w-full h-full"
     />
   );
 };
@@ -253,9 +279,9 @@ const BlockItem = ({ title, description, images }) => {
         className="text-sm text-justify sm:text-left sm:text-base"
       ></p>
       <div className="py-4">
-        <div className="grid grid-flow-row grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-3 auto-rows-auto">
+        <div className="grid grid-flow-row grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 auto-rows-auto">
           {images?.length > 0 &&
-            images.map((img) => <ImageItem src={img} alt={img} />)}
+            images.map((img) => <ImageItem src={img} alt={img} key={img} />)}
         </div>
       </div>
     </div>
@@ -575,7 +601,7 @@ const Section6 = () => {
             Mọi chi tiết xin liên hệ:
             <span className="block">
               Hotline:{" "}
-              <a href="tel:+0933355538" className="underline">
+              <a href="tel:0933355538" className="underline">
                 09 333 555 48
               </a>
             </span>
