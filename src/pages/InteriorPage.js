@@ -29,7 +29,6 @@ import slide1 from "../images/interior/slide-1.jpg";
 import slide2 from "../images/interior/slide-2.jpg";
 import slide4 from "../images/interior/slide-4.jpg";
 import section1Image from "../images/interior/section1.jpg";
-import { fullBrowserVersion } from "react-device-detect";
 
 const getEndpoint = (params) => {
   const endpoint = `${api}${params}`;
@@ -137,7 +136,6 @@ const ranks = [
     description:
       "Với đất nước quan trọng việc thờ cúng tổ tiên phòng thờ là một phong không thể thiếu. Chính vì vậy việc <bold>thi công nội thất phòng thờ</bold> theo phong thuỷ là điều quan trọng",
     images: [
-      "https://i.ibb.co/c1ZBzqp/phong-khach-1.jpg",
       "https://i.ibb.co/GtCbqbw/phong-tho-3.jpg",
       "https://i.ibb.co/kGDj8QZ/phong-tho-2.jpg",
       "https://i.ibb.co/CwyNJ8H/phong-tho-1.jpg",
@@ -436,7 +434,7 @@ const Section2 = () => {
         </div>
         <div className="grid grid-flow-row grid-cols-1 gap-4 mt-20 text-left auto-rows-fr sm:grid-cols-2 lg:grid-cols-3">
           <AboutItem
-            title="Đội ngủ tay nghề cao"
+            title="Đội ngữ tay nghề cao"
             icon={i1}
             description="NỘI THẤT NHÀ BẠN có xưởng sản xuất trực tiếp với quy mô hơn 500m2, với đội ngũ thợ tay nghề cao"
           />
