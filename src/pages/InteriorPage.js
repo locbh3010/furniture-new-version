@@ -44,31 +44,45 @@ const services = [
     title: "THI CÔNG NỘI THẤT CĂN HỘ CHUNG CƯ",
     description:
       "Với một căn hộ với diện tích vừa và nhỏ cho một gia đình trẻ, thì <bold>thi công nội thất chung cư</bold> là một nhu cầu rất lớn của nhiều gia đình.Việc lựa chọn một đơn vị thi công cho căn nhà yêu quý của gia đình là một điều nan giải .Chính vì vậy chúng tôi ở đây để giải quyết vấn đề này.<bold>Thi công nội thất</bold> theo phong cách hiện đại, Luxury, tân cổ điển,… là những mẫu thiết kế được nhiều khách hàng lựa chọn để thiết kế và thi công nội thất.<br/>Với phương châm tiết kiệm chi phí của khách hàng đem đến sự hài lòng cho anh chị..",
-    images: [],
+    images: [
+      "https://i.ibb.co/4FzFZ22/chung-cu-1.jpg",
+      "https://i.ibb.co/7Wc1jvH/chung-cu-2.jpg",
+      "https://i.ibb.co/JkRfmTp/chung-cu-3.jpg",
+    ],
   },
   {
     title: "THI CÔNG NỘI THẤT NHÀ PHỐ HIỆN ĐẠI",
     description:
       "Với </bold>kinh nghiệm nhiều năm trong lĩnh vực thiết kế</bold> nhà phố cùng với đó là thấu hiểu được tâm lý khách hàng qua những năm hoạt động.Thi công nội thất nhà ở đem đến sự thoáng đãng , không gian tiện nghi , tiết kiệm diện tích nhưng vẫn đem lại những yếu tố tốt nhất của căn nhà anh chị",
-    images: [],
+    images: [
+      "https://i.ibb.co/fXjDP3R/nha-pho-1.jpg",
+      "https://i.ibb.co/3SQ8Ytv/nha-pho-2.jpg",
+      "https://i.ibb.co/ZVmQ412/nha-pho-3.jpg",
+      "https://i.ibb.co/X5wztb3/nha-pho-4.jpg",
+    ],
   },
   {
     title: "THI CÔNG NỘI THẤT BIỆT THỰ CAO CẤP",
     description:
       "Nhu cầu <bold>thiết kế nội thất</bold> biệt thự chưa bao giờ là hết nóng với những khách hàng có nhu cầu một tổ ấm sang trọng , tinh tế , thể hiện đẳng cấp của gia chủ.<br/><bold>NỘI THẤT NHÀ BẠN FURNITURE</bold> đã thiết kế rất nhiều công trình tại Bình Dương tự tin đem lại cho anh chị những sản phẩm tốt nhất ",
-    images: [],
+    images: [
+      "https://i.ibb.co/2h0GyMp/biet-thu-2.jpg",
+      "https://i.ibb.co/whZq8nS/biet-thu-1.jpg",
+      "https://i.ibb.co/h91GHTs/biet-thu-3.jpg",
+      "https://i.ibb.co/FKRnZMP/biet-thu-4.jpg",
+    ],
   },
   {
     title: "THI CÔNG NỘI THẤT VĂN PHÒNG TRỌN GÓI",
     description:
-      "<bold>Thiết kế nội thất</bold> văn phòng với những mẫu thiết kế đẹp rộng rãi toát lên sự chuyên nghiệp cho công ty , kiến trúc sư giàu kinh nghiệm.<br/> Bố trí những sản phẩm nội thất theo phong thuỷ cũng là một thế mạnh của chúng tôi",
-    images: [],
-  },
-  {
-    title: "NỘI THẤT NHÀ BẠN FURNITURE",
-    description:
-      "Đối với việc <bold>thi công nội thất phòng giám đốc</bold>, phòng các trưởng bộ phận, các phòng ban,… hợp phong thủy, phù hợp với nhân sự cũng là điều mà <bold>NỘI THẤT NHÀ BẠN</bold> quan tâm khi thi công nội thất văn phòng trọn gói Bình Dương.",
-    images: [],
+      "<bold>Thiết kế nội thất</bold> văn phòng với những mẫu thiết kế đẹp rộng rãi toát lên sự chuyên nghiệp cho công ty , kiến trúc sư giàu kinh nghiệm.<br/> Bố trí những sản phẩm nội thất theo phong thuỷ cũng là một thế mạnh của chúng tôi <bold>NỘI THẤT NHÀ BẠN FURNITURE</bold> Đối với việc <bold>thi công nội thất phòng giám đốc</bold>, phòng các trưởng bộ phận, các phòng ban,… hợp phong thủy, phù hợp với nhân sự cũng là điều mà <bold>NỘI THẤT NHÀ BẠN</bold> quan tâm khi thi công nội thất văn phòng trọn gói Bình Dương.",
+    images: [
+      "https://i.ibb.co/jJVZYdm/van-phong-3.jpg",
+      "https://i.ibb.co/kmRmHWT/van-phong-2.jpg",
+      "https://i.ibb.co/9W42mFR/van-phong-1.jpg",
+      "https://i.ibb.co/6vkfRpq/van-phong-5.jpg",
+      "https://i.ibb.co/XZ3sYxh/van-phong-4.jpg",
+    ],
   },
   {
     title: "THI CÔNG CÁC DỊCH VỤ KHÁC",
@@ -100,7 +114,10 @@ const ranks = [
     title: "THI CÔNG NỘI THẤT NHÀ BẾP",
     description:
       "Nhà bếp là nơi nấu nướng nên thường xuyên tiếp xúc với lửa và nước. Vì vậy, cần lựa chọn <bold>vật liệu thi công nội thất</bold> nhà bếp làm sao để đảm bảo được tính an toàn và đảm bảo chất lượng để tạo nên không gian bếp hoàn hảo.",
-    images: "",
+    images: [
+      "https://i.ibb.co/jzV0Tfc/nha-bep-1.jpg",
+      "https://i.ibb.co/wL9Tr27/phong-khach-10.jpg",
+    ],
   },
   {
     title: "THI CÔNG NỘI THẤT PHÒNG NGỦ TRỌN GÓI",
