@@ -194,7 +194,7 @@ const ProjectList = ({ project }) => {
     const productRef = query(
       collection(db, "products"),
       where("cateId", "==", project.id),
-      limit(8)
+      limit(9)
     );
     getDocs(productRef).then((res) => {
       let temp = [];
