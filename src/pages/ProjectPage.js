@@ -1,43 +1,30 @@
-import axios from "axios";
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import Banner from "../components/section/Banner";
 import banner from "../images/living-room-furniture-og.png";
 import ProductCard from "../components/product/ProductCard";
 import Loading from "../components/loading/Loading";
-import { api } from "../utils/API";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { collection, where, query, onSnapshot } from "firebase/firestore";
+import { db } from "../configs/firebase.config";
+import ProductList from "../components/product/ProductList";
+import { useController, useForm } from "react-hook-form";
 
-const getEndpoint = (params) => {
-  const endpoint = `${api}${params}`;
-
-  return endpoint;
-};
-
-const ProductList = ({ project }) => {
-  const { name, id } = project;
-  const [productList, setProductList] = useState([]);
-
-  useEffect(() => {
-    const endpoint = getEndpoint(`/product/list/${+id}`);
-
-    axios.get(endpoint).then((response) => {
-      const data = response.data.data;
-      setProductList(data);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+const FilterComponent = ({ name, control, children, ...props }) => {
+  const { field } = useController({
+    name,
+    control,
+  });
   return (
-    <div className="py-20">
-      <div className="mb-16 text-center">
-        <h2 className="text-xl font-bold uppercase md:text-2xl">{name}</h2>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7.5 grid-flow-row auto-rows-1fr">
-        {productList?.length > 0 &&
-          productList.map((item) => (
-            <ProductCard project_name={name} product={item} key={item.id} />
-          ))}
-      </div>
-    </div>
+    <select
+      name={name}
+      id={name}
+      className="block w-full px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline"
+      {...field}
+      {...props}
+    >
+      {children}
+    </select>
   );
 };
 
@@ -80,135 +67,103 @@ const LoadingComponent = () => {
   );
 };
 
-const Dropdown = ({ name, children, ...props }) => {
-  // const { field } = useController({
-  //   control,
-  //   name,
-  //   defaultValue: "0",
-  // });
-  return (
-    <select
-      name={name}
-      id={name}
-      className="form-select appearance-none
-      block
-      w-full
-      px-3
-      py-1.5
-      text-base
-      font-normal
-      text-gray-700
-      bg-white bg-clip-padding bg-no-repeat
-      border border-solid border-gray-300
-      rounded
-      transition
-      ease-in-out
-      m-0
-      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none uppercase"
-      // {...field}
-      {...props}
-    >
-      {children}
-    </select>
-  );
-};
-
 const ProjectPage = () => {
-  const [filter, setFilter] = useState(0);
-  const [projectList, setProjectList] = useState([]);
-  const [projectName, setProjectName] = useState(undefined);
-  const [productList, setProductList] = useState([]);
+  const { control, watch } = useForm({
+    mode: onchange,
+  });
   const [loading, setLoading] = useState(true);
-
-  const handleFilter = (e) => {
-    setFilter(+e.target.value);
-  };
+  const [products, setProducts] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [filter, setFilter] = useState(null);
+  const watchFilter = watch("filter");
 
   useEffect(() => {
-    const endpoint = getEndpoint("/project/list");
-    setLoading(true);
+    const colRef = collection(db, "products");
+    const projectRef = collection(db, "projects");
 
-    axios.get(endpoint).then(async (response) => {
-      const projects = response.data.data;
-      projects.length > 0 ? setProjectList(projects) : setProjectList(0);
+    onSnapshot(colRef, (res) => {
+      const docs = res.docs;
+      let temp = [];
 
+      docs?.length > 0 &&
+        docs.map((doc) => temp.push({ id: doc.id, ...doc.data() }));
+
+      setProducts(temp);
       setLoading(false);
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    onSnapshot(projectRef, (res) => {
+      let temp = [];
+
+      res.docs?.length > 0 &&
+        res.docs.map((doc) => temp.push({ id: doc.id, ...doc.data() }));
+      setProjects(temp);
+    });
   }, []);
 
   useEffect(() => {
-    setLoading(true);
+    const colRef = collection(db, "products");
+    if (filter && filter !== 0) {
+      const productRef = query(colRef, where("cateId", "==", filter));
 
-    axios.get(getEndpoint(`/project/list`)).then(async (response) => {
-      const data = response.data.data;
-      await data.forEach((project) => {
-        project.id === +filter && setProjectName(project.name);
-      });
-    });
+      onSnapshot(productRef, (res) => {
+        const docs = res.docs;
+        let temp = [];
 
-    if (filter !== 0) {
-      const endpoint = getEndpoint(`/product/list/${+filter}`);
+        docs?.length > 0 &&
+          docs.map((doc) => temp.push({ id: doc.id, ...doc.data() }));
 
-      axios.get(endpoint).then((response) => {
-        const data = response.data.data;
-        data.length > 0 ? setProductList(data) : setProductList(0);
-
+        setProducts(temp);
         setLoading(false);
       });
-    } else if (filter === 0) {
-      const endpoint = getEndpoint("/project/list");
-      setLoading(true);
+    } else {
+      onSnapshot(colRef, (res) => {
+        const docs = res.docs;
+        let temp = [];
 
-      axios.get(endpoint).then(async (response) => {
-        const projects = response.data.data;
+        docs?.length > 0 &&
+          docs.map((doc) => temp.push({ id: doc.id, ...doc.data() }));
 
-        projects.length > 0 && setProjectList(projects);
-
+        setProducts(temp);
         setLoading(false);
       });
     }
   }, [filter]);
 
+  useEffect(() => {
+    if (watchFilter && watchFilter !== 0) {
+      setFilter(watchFilter);
+    } else if (watchFilter === 0) {
+      setFilter(null);
+    }
+  }, [watchFilter]);
+
   return (
     <div>
       <Banner banner={banner} title="Dự án của chúng tôi" />
       <div className="container">
-        <Dropdown name={"filter"} onChange={handleFilter}>
-          <option value="0">Tất cả dự án</option>
-          {projectList.length > 0 &&
-            projectList.map((project) => {
-              return (
-                <option key={project.id} value={project.id}>
-                  {project.name}
-                </option>
-              );
-            })}
-        </Dropdown>
         {loading && <LoadingComponent></LoadingComponent>}
-        {!loading &&
-          filter === 0 &&
-          projectList?.length > 0 &&
-          projectList.map((project) => {
-            return <ProductList key={project.id} project={project} />;
-          })}
-        {!loading && filter !== 0 && (
-          <div className="py-20">
-            <div className="mb-16 text-center">
-              <h2 className="text-xl font-bold uppercase md:text-2xl">
-                {projectName}
-              </h2>
+        {!loading && (
+          <div className="py-10">
+            <div className="py-8">
+              <div className="max-w-sm">
+                <FilterComponent name="filter" control={control}>
+                  <option value="0">Chọn dự án</option>
+                  {projects?.length > 0 &&
+                    projects.map((project) => (
+                      <option value={project.id} key={project.id}>
+                        {project.name}
+                      </option>
+                    ))}
+                </FilterComponent>
+              </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7.5 grid-flow-row auto-rows-1fr">
-              {productList?.length > 0 &&
-                productList.map((item) => (
-                  <ProductCard
-                    key={item.id}
-                    product={item}
-                    project_name={projectName}
-                  ></ProductCard>
+            <ProductList>
+              {products?.length > 0 &&
+                products.map((product) => (
+                  <ProductCard key={product.id} product={product} />
                 ))}
-            </div>
+            </ProductList>
           </div>
         )}
       </div>

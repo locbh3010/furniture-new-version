@@ -1,35 +1,47 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { api } from "../../utils/API";
 import ProductCard from "../product/ProductCard";
 import ProductList from "../product/ProductList";
+import { db } from "../../configs/firebase.config";
+import {
+  collection,
+  getDoc,
+  getDocs,
+  limit,
+  query,
+  where,
+} from "firebase/firestore";
 
-const getEndpoint = (params) => {
-  const endpoint = `${api}${params}`;
-
-  return endpoint;
-};
 const ProjectHome = () => {
-  const [productList, setProductList] = useState([]);
-  const [nameProject, setNameProject] = useState();
-
+  const [products, setProducts] = useState([]);
   useEffect(() => {
-    const endpoint = getEndpoint("/project/list");
+    const projectRef = query(
+      collection(db, "projects"),
+      where("feature", "==", true),
+      limit(1)
+    );
 
-    axios.get(endpoint).then((response) => {
-      const data = response.data.data;
-      if (data?.length > 0) {
-        setNameProject(data[data.length - 1].name);
+    getDocs(projectRef).then((res) => {
+      res.docs?.length > 0 &&
+        // eslint-disable-next-line array-callback-return
+        res.docs.map((doc) => {
+          const id = doc.id;
+          const productRef = query(
+            collection(db, "products"),
+            where("cateId", "==", id),
+            limit(4)
+          );
 
-        const endpointProductList = getEndpoint(
-          `/product/list/${+data[data.length - 1].id}`
-        );
+          getDocs(productRef).then((res) => {
+            let temp = [];
+            const docs = res.docs;
+            docs?.length > 0 &&
+              docs.map((doc) => temp.push({ id: doc.id, ...doc.data() }));
 
-        axios.get(endpointProductList).then((response) => {
-          setProductList(response.data.data);
+            setProducts(temp);
+          });
         });
-      }
     });
   }, []);
 
@@ -41,21 +53,12 @@ const ProjectHome = () => {
             Sản phẩm <span className=" text-primary"> CỦA CHÚNG TÔI:</span>
           </h2>
         </div>
-
         <ProductList>
-          {productList?.length > 0 &&
-            productList
-              .slice(-6)
-              .map((product, index) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  project_name={nameProject}
-                  index={+index}
-                ></ProductCard>
-              ))}
+          {products?.length > 0 &&
+            products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
         </ProductList>
-
         <div className="flex items-center justify-center mt-20">
           <NavLink
             className="inline-block px-4 py-2 text-base text-center text-white duration-300 border-2 border-primary bg-primary hover:bg-transparent hover:text-dark hover:border-dark md:text-lg"

@@ -9,25 +9,27 @@ const getEndpoint = (params) => {
   return endpoint;
 };
 
-const ProductCard = ({ project_name, product, index = 1 }) => {
+const ProductCard = ({ product, index = 1 }) => {
   const delay = 50 * index;
+  const imagePrimary = product.khongGianNoiThatImages[0];
+  const imageSecond = product.khongGianNoiThatImages[1];
 
   return (
     <NavLink
       className="w-full h-[400px ] group overflow-hidden"
-      to={`/product/${+product.id}`}
+      to={`/product/${product.id}`}
       data-aos="fade-up"
       data-aos-delay={`${delay}`}
     >
       <div className="flex aspect-[4/3]">
         <img
-          src={getEndpoint(product?.image_list[0])}
+          src={imagePrimary}
           alt={product?.name}
           className="flex-shrink-0 object-cover h-full duration-300 basis-full group-hover:-translate-x-full"
           loading="lazy"
         />
         <img
-          src={getEndpoint(product?.image_list[1])}
+          src={imageSecond}
           className="flex-shrink-0 object-cover h-full duration-300 basis-full group-hover:-translate-x-full"
           alt={product?.name}
           loading="lazy"
@@ -40,7 +42,7 @@ const ProductCard = ({ project_name, product, index = 1 }) => {
         </h4>
         <div className="mt-2.5">
           <b>Dự án: </b>
-          <span>{project_name}</span>
+          <span>{product?.cateName}</span>
         </div>
         <div className="mt-2.5">
           <b>Khách hàng: </b>
