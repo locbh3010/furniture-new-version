@@ -29,12 +29,16 @@ import slide1 from "../images/interior/slide-1.jpg";
 import slide2 from "../images/interior/slide-2.jpg";
 import slide4 from "../images/interior/slide-4.jpg";
 import section1Image from "../images/interior/section1.jpg";
-
-const getEndpoint = (params) => {
-  const endpoint = `${api}${params}`;
-
-  return endpoint;
-};
+import {
+  collection,
+  getDocs,
+  limit,
+  onSnapshot,
+  query,
+  where,
+} from "firebase/firestore";
+import { db } from "../configs/firebase.config";
+import ProductList from "../components/product/ProductList";
 
 const banner = [slide1, slide2, slide4];
 
@@ -183,89 +187,40 @@ const AboutItem = ({ icon, title, description }) => {
   );
 };
 
-const ProductList = ({ productList, project_name }) => {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7.5 grid-flow-row auto-rows-1fr">
-      {productList?.length > 0 &&
-        productList.map((product) => (
-          <ProductCard
-            key={product.id}
-            project_name={project_name}
-            product={product}
-          />
-        ))}
-    </div>
-  );
-};
+const ProjectList = ({ project }) => {
+  const [products, setProducts] = useState({});
 
-const CongTrinhTaiBinhDuong = () => {
-  const [productList, setProductList] = useState([]);
-  const IDProject = 139;
-  const endpoint = getEndpoint(`/product/list/${IDProject}`);
   useEffect(() => {
-    let productListTemp = [];
-    axios.get(endpoint).then(async (response) => {
-      const data = await response.data.data;
-      (await data?.length) > 0 &&
-        data.forEach((product) => {
-          productListTemp.push(product);
-        });
-      setProductList(productListTemp);
+    const productRef = query(
+      collection(db, "products"),
+      where("cateId", "==", project.id),
+      limit(8)
+    );
+    getDocs(productRef).then((res) => {
+      let temp = [];
+      res.docs.length > 0 &&
+        res.docs.map((doc) => temp.push({ id: doc.id, ...doc.data() }));
+
+      setProducts(temp);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <div>
-      <div className="container">
-        <h2
-          className="py-4 text-xl font-semibold uppercase sm:text-2xl text-dark"
-          data-aos="fade-right"
-          data-aos-duration="700"
-        >
-          Công trình tại bình dương
-        </h2>
-        <div className="py-8">
-          <ProductList
-            productList={productList}
-            project_name="Công trình tại bình dương"
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const MauThietKeDep = () => {
-  const [productList, setProductList] = useState([]);
-  const IDProject = 140;
-  const endpoint = getEndpoint(`/product/list/${IDProject}`);
-  useEffect(() => {
-    let productListTemp = [];
-    axios.get(endpoint).then(async (response) => {
-      const data = await response.data.data;
-      (await data?.length) > 0 &&
-        data.forEach((product) => {
-          productListTemp.push(product);
-        });
-      setProductList(productListTemp);
-    });
-  }, []);
-  return (
-    <div>
-      <div className="container">
-        <h2
-          className="py-4 text-xl font-semibold uppercase sm:text-2xl text-dark"
-          data-aos="fade-right"
-          data-aos-duration="700"
-        >
-          Mẫu thiết kế đẹp
-        </h2>
-        <div className="py-8">
-          <ProductList
-            productList={productList}
-            project_name="Mẫu thiết kế đẹp"
-          />
-        </div>
-      </div>
+      <h3
+        className="py-4 text-xl font-semibold uppercase sm:text-2xl text-dark"
+        data-aos="fade-right"
+        data-aos-duration="700"
+      >
+        {project?.name}
+      </h3>
+      <ProductList>
+        {products.length > 0 &&
+          products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+      </ProductList>
     </div>
   );
 };
@@ -344,6 +299,7 @@ const InteriorHeader = () => {
                 modules={[Navigation, Autoplay, Parallax, Pagination]}
                 autoplay={{
                   delay: 3000,
+                  disableOnInteraction: false,
                 }}
                 parallax={true}
                 loop={true}
@@ -455,6 +411,25 @@ const Section2 = () => {
 };
 
 const Section3 = () => {
+  const projectShowcase = query(
+    collection(db, "projects"),
+    where("showcase", "==", true),
+    limit(2)
+  );
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    getDocs(projectShowcase).then((res) => {
+      let temp = [];
+
+      res.docs.length > 0 &&
+        res.docs.map((doc) => temp.push({ id: doc.id, ...doc.data() }));
+
+      setProjects(temp);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <section className="py-20">
       <div className="container">
@@ -475,9 +450,11 @@ const Section3 = () => {
             căn hộ chung cư,…
           </p>
         </div>
+        {projects?.length > 0 &&
+          projects.map((project) => (
+            <ProjectList project={project} key={project.id} />
+          ))}
       </div>
-      <CongTrinhTaiBinhDuong />
-      <MauThietKeDep />
     </section>
   );
 };

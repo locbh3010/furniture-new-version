@@ -30,7 +30,7 @@ const ProjectHome = () => {
           const productRef = query(
             collection(db, "products"),
             where("cateId", "==", id),
-            limit(4)
+            limit(3)
           );
 
           getDocs(productRef).then((res) => {
