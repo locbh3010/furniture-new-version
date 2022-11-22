@@ -13,6 +13,8 @@ const AboutPage = React.lazy(() => import("./pages/AboutPage"));
 const ContactPage = React.lazy(() => import("./pages/ContactPage"));
 const Product = React.lazy(() => import("./pages/Product"));
 const InteriorPage = React.lazy(() => import("./pages/InteriorPage"));
+const Blogs = React.lazy(() => import("./pages/Blogs"));
+const Blog = React.lazy(() => import("./pages/Blog"));
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route path="/contact" element={<ContactPage />}></Route>
             <Route path="/product/:id" element={<Product />}></Route>
             <Route path="/interior" element={<InteriorPage />}></Route>
+            <Route path="/blogs" element={<Blogs />}></Route>
+            <Route path="/blog/:id" element={<Blog />}></Route>
           </Route>
           <Route path="*" element={<PageNotFound />}></Route>
         </Routes>

@@ -13,7 +13,9 @@ const BlogItem = ({ blog }) => {
     content.current.textContent = "";
     content.current.insertAdjacentHTML("beforeend", blog.content);
   }, [blog.content]);
-  const handleNavigate = navigate(`/blog/${blog.id}`);
+  const handleNavigate = () => {
+    navigate(`/blog/${blog.id}`);
+  };
   return (
     <div className="flex flex-col duration-300 bg-white rounded shadow group hover:shadow-lg">
       <div
@@ -28,7 +30,7 @@ const BlogItem = ({ blog }) => {
       </div>
       <div className="flex flex-col flex-1 px-5 py-4 border border-t-0 border-gray-300/30">
         <h3
-          className="mt-3 mb-2 text-xl font-medium text-black cursor-pointer line-clamp-2"
+          className="mt-3 mb-2 text-xl font-medium text-black capitalize cursor-pointer line-clamp-2"
           onClick={handleNavigate}
         >
           {blog.name}
@@ -72,7 +74,7 @@ export default function BlogList({ limitQuery = 3 }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="grid grid-cols-3 gap-4 gird-flow-row auto-rows-fr">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 gird-flow-row auto-rows-fr">
       {blogs?.length > 0 &&
         blogs.map((blog) => <BlogItem key={blog.id} blog={blog} />)}
     </div>

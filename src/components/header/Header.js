@@ -120,6 +120,15 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
+                  to="/blogs"
+                  className="block py-4 pl-3 pr-4 text-sm font-semibold rounded text-33 lg:bg-transparent lg:p-0 "
+                  aria-current="page"
+                >
+                  Blog
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/interior"
                   className="block py-4 pl-3 pr-4 text-sm font-semibold rounded text-33 lg:bg-transparent lg:p-0 "
                   aria-current="page"
