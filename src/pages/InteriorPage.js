@@ -27,20 +27,15 @@ import ProductCard from "../components/product/ProductCard";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import slide1 from "../images/interior/slide-1.jpg";
 import slide2 from "../images/interior/slide-2.jpg";
+import slide3 from "../images/interior/slide-3.jpg";
 import slide4 from "../images/interior/slide-4.jpg";
+import slide5 from "../images/interior/slide-5.jpg";
 import section1Image from "../images/interior/section1.jpg";
-import {
-  collection,
-  getDocs,
-  limit,
-  onSnapshot,
-  query,
-  where,
-} from "firebase/firestore";
+import { collection, getDocs, limit, query, where } from "firebase/firestore";
 import { db } from "../configs/firebase.config";
 import ProductList from "../components/product/ProductList";
 
-const banner = [slide1, slide2, slide4];
+const banner = [slide1, slide2, slide3, slide4, slide5];
 
 const services = [
   {

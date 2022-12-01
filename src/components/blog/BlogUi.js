@@ -6,13 +6,18 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../../configs/firebase.config";
 
 const BlogItem = ({ blog }) => {
-  const content = useRef(null);
   const navigate = useNavigate();
+  const description = useRef(null);
 
   useEffect(() => {
-    content.current.textContent = "";
-    content.current.insertAdjacentHTML("beforeend", blog.content);
-  }, [blog.content]);
+    if (blog.description) {
+      if (description?.current) {
+        description.current.textContent = "";
+        description.current?.insertAdjacentHTML("beforeend", blog.description);
+      }
+    }
+  }, [blog]);
+
   const handleNavigate = () => {
     navigate(`/blog/${blog.id}`);
   };
@@ -35,7 +40,10 @@ const BlogItem = ({ blog }) => {
         >
           {blog.name}
         </h3>
-        <span className="mb-6 text-gray-500 line-clamp-3" ref={content}></span>
+        <span
+          className="mb-6 text-gray-500 line-clamp-3"
+          ref={description}
+        ></span>
         <div className="mt-auto">
           <button
             className="inline-flex items-center justify-center px-8 py-4 font-sans font-semibold tracking-wide text-white bg-blue-500 rounded cursor-pointer h-[60px] duration-300 hover:bg-blue-400"
