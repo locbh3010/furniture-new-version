@@ -1,13 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { api } from "../../utils/API";
-
-const getEndpoint = (params) => {
-  const endpoint = `${api}${params}`;
-
-  return endpoint;
-};
 
 const ProductCard = ({ product, index = 1 }) => {
   const delay = 50 * index;

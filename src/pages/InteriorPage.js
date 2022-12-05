@@ -19,8 +19,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 // api
-import axios from "axios";
-import { api } from "../utils/API";
 import ProductCard from "../components/product/ProductCard";
 
 // images
@@ -103,7 +101,6 @@ const ranks = [
       "https://i.ibb.co/YT955mb/phong-khach-6.jpg",
       "https://i.ibb.co/WDSF06K/phong-khach-7.jpg",
       "https://i.ibb.co/KjNMT6t/phong-khach-8.jpg",
-      "https://i.ibb.co/j6SQf1c/phong-khach-9.jpg",
       "https://i.ibb.co/wL9Tr27/phong-khach-10.jpg",
       "https://i.ibb.co/5BHKR6b/phong-khach-11.jpg",
     ],
@@ -155,16 +152,7 @@ const Title = ({ title, color }) => {
 };
 
 const ImageItem = ({ src, alt }) => {
-  return (
-    <LazyLoadImage
-      src={src}
-      height="100%"
-      width="100%"
-      effect="blur"
-      alt={alt}
-      className="object-cover w-full h-full"
-    />
-  );
+  return <img src={src} alt={alt} className="w-full h-full obejct-cover" />;
 };
 
 const AboutItem = ({ icon, title, description }) => {
@@ -385,12 +373,12 @@ const Section2 = () => {
         </div>
         <div className="grid grid-flow-row grid-cols-1 gap-4 mt-20 text-left auto-rows-fr sm:grid-cols-2 lg:grid-cols-3">
           <AboutItem
-            title="Đội ngữ tay nghề cao"
+            title="Đội ngũ tay nghề cao"
             icon={i1}
             description="NỘI THẤT NHÀ BẠN có xưởng sản xuất trực tiếp với quy mô hơn 500m2, với đội ngũ thợ tay nghề cao"
           />
           <AboutItem
-            title="Đội ngủ sáng tạo"
+            title="Đội ngũ sáng tạo"
             icon={i6}
             description="NỘI THẤT NHÀ BẠN có đội ngũ thiết kế sáng tạo cao với founder là Kiến Trúc Sư tâm huyết"
           />
@@ -445,10 +433,12 @@ const Section3 = () => {
             căn hộ chung cư,…
           </p>
         </div>
-        {projects?.length > 0 &&
-          projects.map((project) => (
-            <ProjectList project={project} key={project.id} />
-          ))}
+        <div className="flex flex-col-reverse gap-12">
+          {projects?.length > 0 &&
+            projects.map((project) => (
+              <ProjectList project={project} key={project.id} />
+            ))}
+        </div>
       </div>
     </section>
   );
