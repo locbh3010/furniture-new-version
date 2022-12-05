@@ -134,7 +134,7 @@ const ranks = [
     images: [
       "https://i.ibb.co/GtCbqbw/phong-tho-3.jpg",
       "https://i.ibb.co/kGDj8QZ/phong-tho-2.jpg",
-      "https://i.ibb.co/CwyNJ8H/phong-tho-1.jpg",
+      "https://i.ibb.co/jbFvJHj/phong-tho-4.jpg",
     ],
   },
 ];
